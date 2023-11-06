@@ -2,6 +2,8 @@ import json
 import os
 import tkinter as tk
 
+#Chat GPT "helped" hashtag end my suffering
+
 # Define the directory where your JSON files are located
 json_directory = "Satisfactory/Attempt 1/item_data"
 
@@ -35,7 +37,7 @@ def calculate_required_materials(item_name, required_quantity_per_minute):
         return required_materials, result
     else:
         return None, None
-
+# this could be an issue? returns item not found
 def calculate_button_clicked():
     item_name = selected_item.get()  # Get the selected item from the dropdown menu
     required_quantity_per_minute = int(quantity_entry.get())
@@ -52,6 +54,7 @@ def calculate_button_clicked():
 # Create the main window
 window = tk.Tk()
 window.title("Satisfactory Calculator")
+window.geometry("960x540")
 
 # Create and configure GUI elements
 item_names = [filename.split(".json")[0] for filename in os.listdir(json_directory) if filename.endswith(".json")]
