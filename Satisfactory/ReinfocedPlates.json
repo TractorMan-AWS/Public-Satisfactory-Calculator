@@ -1,0 +1,100 @@
+{
+    "Reinforced Iron Plates":"Reinforced Iron Plates[5/m]",
+        [
+            "Iron plate":"30/m",
+            "Screw":"60/m"
+        ]
+}
+
+{
+    "Iron Plates":"Iron Plates[20/m]",
+    [
+        "iron":"30/m"
+    ]
+}
+{
+    "Screw":"Screw[40/m]",
+    [
+        "Iron Rod":"10/m",
+    ]
+}
+{
+    "Iron Rods":"Iron Rods[15/m]",
+    [
+        "Iron":"15/m",
+    ]
+}
+
+------------------------------------------
+
+{
+    "Reinforced Iron Plates":"20/m",
+        [
+            "Iron plate":"120/m",
+            "Screw":"240/m",
+            "Constructor":"4"
+        ]
+}
+
+{
+    "Iron Plates":"20/m", 
+    [
+        "iron":"30/m"
+    ],
+    [
+        "Iron Plates":"120/m",
+        [
+            "Iron":"180/m",
+            "Constructor":"6"
+        ]
+    ]
+}
+{
+    "Screw":"40/m",
+    [
+        "Iron Rod":"10/m",
+    ]
+    [
+        "Screw":"240/m",
+        [
+            "Iron Rod":"60/m",
+            "Constructor":"6"
+        ]
+    ]
+}
+{
+    "Iron Rods":"15/m",
+    [
+        "Iron":"15/m",
+    ]
+    [
+        "Iron Rods":"60/m",
+        [
+        "Iron":"60/m",
+        "Constructors":"4"
+        ]
+    ]
+}
+{
+    [
+    "Iron plate":"120/m",
+    "Screw":"240/m",
+    "Iron Rod":"60/m",
+    "Iron":"240/m"
+    ],
+    [
+    "Smelter":"8",
+    "Miner mk1":"2",
+    "Constructor":"20",
+    {
+       "Resources"
+       [
+       "Reinforced Iron Plates":"72",
+       "Rotor":"16",
+       "Iron Plate":"24",
+       "Concrete":"20",
+       "Wire":"64"
+       ]
+    }
+    ]
+}
