@@ -1,0 +1,11 @@
+{
+    "Crystal Oscillator":
+    {
+        "Result":1,
+        "Ingredients":{
+            "Quartz Crystal":18,
+            "Cable":14,
+            "Reinforced Iron Plate":2.5
+        }
+    }
+}

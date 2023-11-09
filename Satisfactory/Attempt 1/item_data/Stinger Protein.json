@@ -1,9 +1,9 @@
 {
-    "Steel Pipe":
+    "Stinger Protein":
     {
         "Result":20,
         "Ingredients":{
-            "Steel Ingot":30
+            "Stinger Remains":20
         }
     }
 }

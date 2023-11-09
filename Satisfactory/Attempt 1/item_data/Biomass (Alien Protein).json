@@ -1,0 +1,9 @@
+{
+    "Biomass (Alien Protein)":
+    {
+        "Result":1500,
+        "Ingredients":{
+            "Alien Protein":15
+        }
+    }
+}

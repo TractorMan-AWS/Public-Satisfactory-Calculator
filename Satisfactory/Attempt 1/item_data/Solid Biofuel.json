@@ -1,0 +1,9 @@
+{
+    "Solid Biofuel":
+    {
+        "Result":60,
+        "Ingredients":{
+            "Biomass":120
+        }
+    }
+}

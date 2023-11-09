@@ -1,9 +1,9 @@
 {
-    "Steel Pipe":
+    "Spitter Protein":
     {
         "Result":20,
         "Ingredients":{
-            "Steel Ingot":30
+            "Plasma Spitter Remains":20
         }
     }
 }

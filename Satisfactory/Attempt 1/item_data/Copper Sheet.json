@@ -1,0 +1,9 @@
+{
+    "Copper sheet":
+    {
+        "Result":10,
+        "Ingredients":{
+            "Copper Ingot":20
+        }
+    }
+}

@@ -1,9 +1,9 @@
 {
-    "Steel Pipe":
+    "Iron Plate":
     {
         "Result":20,
         "Ingredients":{
-            "Steel Ingot":30
+            "Iron Ingot":30
         }
     }
 }
