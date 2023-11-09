@@ -1,83 +1,61 @@
-import json
-import os
 import tkinter as tk
+import os
+import json
 
-#Chat GPT "helped" hashtag end my suffering
+# Function to calculate required ingredients
+def calculate_ingredients():
+    try:
+        item_name = item_var.get()
+        required_amount = float(input_var.get())
+        
+        # Build the full path to the "item_data" folder
+        item_data_folder = os.path.join(os.path.dirname(__file__), "item_data")
 
-# Define the directory where your JSON files are located
-json_directory = "Satisfactory/Attempt 1/item_data"
-
-def load_item_data(item_name):
-    json_file_path = os.path.join(json_directory, f"{item_name}.json")
-    if os.path.exists(json_file_path):
-        with open(json_file_path, 'r') as json_file:
-            return json.load(json_file)
-    else:
-        print(f"JSON file not found: {json_file_path}")
-        return None
-
-def calculate_result(item_data, required_materials):
-    if "Ingredients" in item_data:
-        min_items_produced = float('inf')
-        for sub_item, sub_quantity in item_data["Ingredients"].items():
-            if sub_item not in required_materials:
-                return 0
-            min_items_produced = min(min_items_produced, required_materials[sub_item] // sub_quantity)
-        return min_items_produced * item_data["Result"]
-    else:
-        return 0
-
-def calculate_required_materials(item_name, required_quantity_per_minute):
-    item_data = load_item_data(item_name)
-    if item_data:
-        required_materials = {}
-        for sub_item, rate_per_minute in item_data.get("Ingredients", {}).items():
-            required_materials[sub_item] = rate_per_minute * required_quantity_per_minute
-        result = calculate_result(item_data, required_materials)
-        return required_materials, result
-    else:
-        return None, None
-# this could be an issue? returns item not found
-def calculate_button_clicked():
-    item_name = selected_item.get()  # Get the selected item from the dropdown menu
-    required_quantity_per_minute = int(quantity_entry.get())
-    
-    required_materials, result = calculate_required_materials(item_name, required_quantity_per_minute)
-    if required_materials and result:
-        result_text.config(text=f"Required materials for {item_name} * {required_quantity_per_minute} per minute:")
-        material_text.config(text="\n".join([f"{sub_item}: {quantity_per_minute} per minute" for sub_item, quantity_per_minute in required_materials.items()]))
-        result_text2.config(text=f"Result: {result} per minute")
-    else:
-        result_text.config(text=f"No data found for {item_name}")
-        result_text2.config(text="")
+        with open(os.path.join(item_data_folder, f'{item_name}.json')) as file:
+            item_data = json.load(file)
+        
+        result = item_data[item_name]["Result"]
+        ingredients = item_data[item_name]["Ingredients"]
+        
+        required_ingredients = {ingredient: required_amount / result * amount for ingredient, amount in ingredients.items()}
+        
+        formatted_output = "\n".join([f"{ingredient}: {amount}" for ingredient, amount in required_ingredients.items()])
+        ingredient_output.config(text=formatted_output)
+    except (ValueError, FileNotFoundError, KeyError):
+        result_label.config(text="Invalid item or input.")
 
 # Create the main window
 window = tk.Tk()
-window.title("Satisfactory Calculator")
+window.title("Ingredient Calculator")
 window.geometry("960x540")
 
-# Create and configure GUI elements
-item_names = [filename.split(".json")[0] for filename in os.listdir(json_directory) if filename.endswith(".json")]
-selected_item = tk.StringVar()  # Variable to store the selected item
-item_name_label = tk.Label(window, text="Select Item:")
-item_name_menu = tk.OptionMenu(window, selected_item, *item_names)
-item_name_menu.config(width=20)
-quantity_label = tk.Label(window, text="Quantity per Minute:")
-quantity_entry = tk.Entry(window)
-calculate_button = tk.Button(window, text="Calculate", command=calculate_button_clicked)
-result_text = tk.Label(window, text="")
-material_text = tk.Label(window, text="")
-result_text2 = tk.Label(window, text="")
+# Load the item names from the item_data directory
+item_data_folder = os.path.join(os.path.dirname(__file__), "item_data")
+item_files = [file.split(".")[0] for file in os.listdir(item_data_folder)]
+item_var = tk.StringVar()
+item_var.set(item_files[0])
 
-# Place GUI elements in the window
-item_name_label.pack()
-item_name_menu.pack()
-quantity_label.pack()
-quantity_entry.pack()
+# Create a dropdown for selecting the item
+item_label = tk.Label(window, text="Select Item:")
+item_dropdown = tk.OptionMenu(window, item_var, *item_files)
+item_label.pack()
+item_dropdown.pack()
+
+# Create an input field for the required amount
+input_label = tk.Label(window, text="Enter Required Amount:")
+input_var = tk.Entry(window)
+input_label.pack()
+input_var.pack()
+
+# Create a button to calculate ingredients
+calculate_button = tk.Button(window, text="Calculate Ingredients", command=calculate_ingredients)
 calculate_button.pack()
-result_text.pack()
-material_text.pack()
-result_text2.pack()
 
-# Start the GUI application
+# Create labels to display the result
+result_label = tk.Label(window, text="")
+result_label.pack()
+ingredient_output = tk.Label(window, text="")
+ingredient_output.pack()
+
+# Start the GUI event loop
 window.mainloop()
