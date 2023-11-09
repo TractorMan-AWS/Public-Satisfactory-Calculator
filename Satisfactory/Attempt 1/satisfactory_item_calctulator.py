@@ -27,7 +27,7 @@ def calculate_ingredients():
 # Create the main window
 window = tk.Tk()
 window.title("Ingredient Calculator")
-window.geometry("960x540")
+window.geometry("235x270")
 
 # Load the item names from the item_data directory
 item_data_folder = os.path.join(os.path.dirname(__file__), "item_data")
