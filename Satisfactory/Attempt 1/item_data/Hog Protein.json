@@ -1,9 +1,9 @@
 {
-    "Steel Pipe":
+    "Hog Protein":
     {
         "Result":20,
         "Ingredients":{
-            "Steel Ingot":30
+            "Hog Remains":20
         }
     }
 }

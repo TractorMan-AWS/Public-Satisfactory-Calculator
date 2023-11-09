@@ -1,0 +1,10 @@
+{
+    "Circuit Board":
+    {
+        "Result":7.5,
+        "Ingredients":{
+            "Copper sheet":15,
+            "Plastic":30
+        }
+    }
+}
