@@ -5,7 +5,7 @@ import json
 # Create the main window
 window = Tk()
 window.title("Ingredient Calculator")
-window.iconbitmap('Testing_Grounds_PY/Satisfactory/Images/icon/cha0scharly.ico')
+window.iconbitmap('Satisfactory/Attempt 1/Images/icon/cha0scharly.ico')
 window.geometry("417x950")
 
 # Menu frame
