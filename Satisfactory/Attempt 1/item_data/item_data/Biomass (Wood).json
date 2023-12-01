@@ -1,0 +1,9 @@
+{
+    "Biomass (Wood)":
+    {
+        "Result":300,
+        "Ingredients":{
+            "Wood":60
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "Black Powder":
+    {
+        "Result":30,
+        "Ingredients":{
+            "Coal":15,
+            "Sulphur":15
+        }
+    }
+}

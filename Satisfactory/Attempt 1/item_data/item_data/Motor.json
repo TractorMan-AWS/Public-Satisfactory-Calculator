@@ -1,0 +1,10 @@
+{
+    "Motor":
+    {
+        "Result":5,
+        "Ingredients":{
+            "Rotor":10,
+            "Stator":10
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "Reinforced Iron Plates":
+    {
+        "Result":5,
+        "Ingredients":{
+            "Iron Plate":30,
+            "Screw":60
+        }
+    }
+}

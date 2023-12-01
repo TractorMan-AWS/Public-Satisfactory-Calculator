@@ -1,0 +1,9 @@
+{
+    "Iron Rod":
+    {
+        "Result":15,
+        "Ingredients":{
+            "Iron Ingot":15
+        }
+    }
+}

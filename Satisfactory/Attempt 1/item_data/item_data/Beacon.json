@@ -1,0 +1,12 @@
+{
+    "Beacon":
+    {
+        "Result":7.5,
+        "Ingredients":{
+            "Iron Plate":22.5,
+            "Iron Rod":7.5,
+            "Wire":112.5,
+            "Cable":15
+        }
+    }
+}
