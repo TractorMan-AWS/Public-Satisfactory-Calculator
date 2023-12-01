@@ -1,0 +1,12 @@
+{
+    "Computer":
+    {
+        "Result":2.5,
+        "Ingredients":{
+            "Circuit Board":25,
+            "Cable":22.5,
+            "Plastic":45,
+            "Screw":130
+        }
+    }
+}

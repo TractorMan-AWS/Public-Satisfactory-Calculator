@@ -1,0 +1,10 @@
+{
+    "Stator":
+    {
+        "Result":5,
+        "Ingredients":{
+            "Steel Pipe":15,
+            "Wire":40
+        }
+    }
+}

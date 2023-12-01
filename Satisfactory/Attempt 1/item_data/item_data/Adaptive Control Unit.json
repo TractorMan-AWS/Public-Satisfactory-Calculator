@@ -1,0 +1,12 @@
+{
+    "Adaptive Control Unit":
+    {
+        "Result":1,
+        "Ingredients":{
+            "Automated Wiring":7.5,
+            "Circuit board":5,
+            "Heavy Modular Frame":1,
+            "Computer":1
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "Automated Wiring":
+    {
+        "Result":2.5,
+        "Ingredients":{
+            "Stator":2.5,
+            "Cable":50
+        }
+    }
+}
